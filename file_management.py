@@ -20,7 +20,7 @@ def close():
    root.quit()
    root.withdraw()
    if (site.get() == 0 and seismic.get() == 0):
-    messagebox.showinfo("Operation Cancelled", "You did not select a file method (GAM Site and/or Seismic)")
+    messagebox.showinfo("Operation Cancelled", "You did not select a file method")
     sys.exit()
  
 site = tk.IntVar()
@@ -176,7 +176,7 @@ def seismicAggregation():
     for i in range(5):
         os.rename(eng_dest+global_file_names[i], eng_dest+rename_global[i])
  
-#GAM Site/V-Drive File Aggregation
+#Site File Aggregation
 if (site.get() == 1 and seismic.get() == 0):
  
     messagebox.showwarning("Please Read", "The following selection windows are for you to select the file locations. Please be sure to select each folder in accordance to the list below.\n\n1. English Files\n2. French Files\n3. Global/Non-ACS Files\n4. Manually Run Files")
@@ -194,7 +194,7 @@ if (site.get() == 1 and seismic.get() == 0):
    
     siteAggregation()
    
-#Seismic/ACS file aggregation  
+#Seismic file aggregation  
 elif (site.get() == 0 and seismic.get() == 1):
  
     messagebox.showwarning("Please Read", "The following selection windows are for you to select the file locations. Please be sure to select each folder in accordance to the list below.\n\n1. English Files\n2. French Files\n3. Global/ACS Files\n4. Manually Run Files")
